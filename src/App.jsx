@@ -71,15 +71,14 @@ const App = () => {
       <section className="note-container">
         <div className="mt-8 flex flex-col gap-2.5" id="note-section">
           <h2 className="text-4xl text-[#505050] font-bold">Notes</h2>
-          <div id="notes" className="w-full min-h-screen flex gap-3.5 flex-wrap m-6 justify-center">
+          <div id="notes" className="w-full min-h-screen flex gap-3.5 flex-wrap m-6 justify-center items-start">
             {notes.map((elem, idx) => {
-              return <div key={idx} style={{ backgroundColor: elem.color }} className="note gap-2 rounded-[6px] h-70 w-60 p-3 flex flex-col hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-default">
+              return <div key={idx} style={{ backgroundColor: elem.color }} className="note gap-2 rounded-[6px] min-h-70 w-60 p-3 flex flex-col hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-default">
                 <div className="title text-xl font-bold mb-1.5 whitespace-pre-wrap wrap-break-word">{elem.title}</div>
                 <div className="description flex-1 whitespace-pre-wrap wrap-break-word">{elem.description}</div>
                 <button onClick={() => {
                   deleteNote(idx);
-                }} id="delete-btn" className="cursor-pointer active:bg-[#747474] py-2 px-4 font-bold rounded-full transition-all duration-300 ease-in-out bg-red-500/30 text-red-300 hover:bg-red-500 hover:text-white border border-red-500/30
-">Delete</button>
+                }} id="delete-btn" className="cursor-pointer active:bg-[#747474] py-2 px-4 font-bold rounded-full transition-all duration-300 ease-in-out bg-red-500/30 text-red-300 hover:bg-red-500 hover:text-white border border-red-500/30">Delete</button>
               </div>
             })}
           </div>
